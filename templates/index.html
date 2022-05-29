@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Search</h1>
+
+    <div class="form" style = "text-align: center; font-size: large;">
+        <form action="/Job" method="POST">
+            <input type="text" name="position" id="content" placeholder="Enter Position to Search">
+            <input type="text" name="location" id="content" placeholder="Enter the Location">
+            <input type="text" name="No_of_pages" id="content" placeholder="No of pages to check">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+</div>
+{% endblock %}
