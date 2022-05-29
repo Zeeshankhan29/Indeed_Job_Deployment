@@ -27,8 +27,8 @@ def index():
         reviews = []
 
         for i in range(1, No_of_pages + 1, 1):
-            template = "https://in.indeed.com/jobs?q={}&l={}&start={}0"
-            url = template.format(position, location, No_of_pages)
+            template = "https://in.indeed.com/jobs?q="+position+"&l="+location+"&start="+str(i)+"0&vjk=6cad8762e70bc5c1"
+            url = template
             page = requests.get(url)
             indeed_html = bs(page.text, 'html.parser')
             boxes = indeed_html.findAll('div', 'job_seen_beacon')
